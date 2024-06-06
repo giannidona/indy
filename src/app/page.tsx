@@ -12,7 +12,7 @@ export default function Home() {
         </h2>
         <div className="flex flex-col gap-y-3 md:flex md:flex-row md:gap-x-3 md:justify-center">
           <Link
-            href="/lib"
+            href="/docs"
             className="bg-white text-black rounded px-3 py-1 font-semibold hover:bg-white/80 transition duration-300 ease-in-out md:w-fit"
           >
             view components
