@@ -24,7 +24,7 @@ export const Pricing = () => {
         <div className="text-center">
           <Link
             href="#"
-            className="flex justify-center bg-white rounded px-3 py-1 font-semibold hover:bg-white/80 transition ease-in-out duration-300"
+            className="text-black flex justify-center bg-white rounded px-3 py-1 font-semibold hover:bg-white/80 transition ease-in-out duration-300"
           >
             Get Pack
           </Link>
@@ -52,7 +52,7 @@ export const Pricing = () => {
         <div className="text-center">
           <Link
             href="#"
-            className="flex justify-center bg-yellow-400 rounded px-3 py-1 font-semibold hover:bg-yellow-400/80 transition ease-in-out duration-300"
+            className="text-black flex justify-center bg-yellow-400 rounded px-3 py-1 font-semibold hover:bg-yellow-400/80 transition ease-in-out duration-300"
           >
             Get Pack
           </Link>
@@ -80,7 +80,7 @@ export const Pricing = () => {
         <div className="text-center">
           <Link
             href="#"
-            className="flex justify-center bg-white rounded px-3 py-1 font-semibold hover:bg-white/80 transition ease-in-out duration-300"
+            className="text-black flex justify-center bg-white rounded px-3 py-1 font-semibold hover:bg-white/80 transition ease-in-out duration-300"
           >
             Get Pack
           </Link>
