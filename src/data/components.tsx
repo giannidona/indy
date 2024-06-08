@@ -1,7 +1,11 @@
-import { IconBadge } from "@/_components";
-import { Dropdown } from "@/_components";
-import { Pricing } from "@/_components";
-import { Stars } from "@/_components";
+import {
+  IconBadge,
+  UsersList,
+  Dropdown,
+  Pricing,
+  Stars,
+  GradientWord,
+} from "@/_components";
 
 export const COMPONENTS = [
   {
@@ -11,7 +15,7 @@ export const COMPONENTS = [
     type: "badges",
   },
   {
-    name: "Dropwdown",
+    name: "Dropdown",
     slug: "dropdown",
     component: <Dropdown />,
     type: "dropdown",
@@ -27,5 +31,17 @@ export const COMPONENTS = [
     slug: "stars",
     component: <Stars />,
     type: "users",
+  },
+  {
+    name: "Users List",
+    slug: "users-list",
+    component: <UsersList />,
+    type: "users",
+  },
+  {
+    name: "Gradient Word",
+    slug: "gradient-word",
+    component: <GradientWord />,
+    type: "texts",
   },
 ];
