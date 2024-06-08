@@ -21,7 +21,7 @@ const links = [
 ];
 export const Navbar = () => {
   return (
-    <nav className="w-[180px] px-5 mr-24 border-r">
+    <nav className="hidden lg:block w-[180px] px-5 mr-24 border-r">
       <div className="my-10">
         <Link href="/" className="text-white font-bold text-3xl">
           INDY
