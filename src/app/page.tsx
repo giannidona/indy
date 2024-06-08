@@ -1,6 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { TbBrandNextjs } from "react-icons/tb";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { IoLogoGithub } from "react-icons/io";
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-24 text-white text-center">
@@ -22,30 +26,18 @@ export default function Home() {
             target="_blank"
             className="border rounded border-eGray text-eGray px-3 py-1 font-semibold flex items-center justify-center md:w-fit"
           >
-            <Image src="/github.svg" alt="github logo" width={15} height={15} />
+            <IoLogoGithub className="text-xl" />
             <span className="ml-2">github</span>
           </Link>
         </div>
       </div>
       <div className="flex justify-center gap-x-5 text-eGray">
         <span className="flex items-center">
-          <Image
-            className="mr-2"
-            src="./nextjs.svg"
-            alt="nextjs icon"
-            width={20}
-            height={20}
-          />
+          <TbBrandNextjs className="mr-1 text-xl" />
           Next.js
         </span>
         <span className="flex items-center ">
-          <Image
-            className="mr-2"
-            src="./tailwindcss.svg"
-            alt="tailwindcss icon"
-            width={20}
-            height={20}
-          />
+          <RiTailwindCssFill className="mr-1 text-xl" />
           Tailwindcss
         </span>
       </div>
