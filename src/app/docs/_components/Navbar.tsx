@@ -13,12 +13,20 @@ const links = [
     name: "Pricing",
     slug: "/docs/pricing",
   },
-
+  {
+    name: "Gradient Word",
+    slug: "/docs/gradient-word",
+  },
   {
     name: "Stars",
     slug: "/docs/stars",
   },
+  {
+    name: "Users List",
+    slug: "/docs/users-list",
+  },
 ];
+
 export const Navbar = () => {
   return (
     <nav className="hidden lg:block w-[180px] px-5 mr-24 border-r">

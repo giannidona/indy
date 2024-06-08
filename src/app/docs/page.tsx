@@ -53,11 +53,19 @@ export default function DocsPage() {
         <h2 className="text-3xl font-bold mb-10">Components</h2>
 
         {COMPONENTS.map((component) => (
-          <Link key={component.slug} href={`/docs/${component.slug}`}>
-            <div className="mb-12 py-2 border border-eWhite/50 rounded-xl h-auto flex justify-center items-center hover:bg-white/15 duration-300 transition ease-in-out">
+          <div className="mb-12" key={component.slug}>
+            <div className="mb-1 py-2 border border-eWhite/50 rounded-xl h-auto flex justify-center items-center">
               {component.component}
             </div>
-          </Link>
+            <div className="text-right">
+              <Link
+                className="text-white pr-2 underline hover:text-white/50 transition duration-150 ease-in-out"
+                href={`/docs/${component.slug}`}
+              >
+                view component
+              </Link>
+            </div>
+          </div>
         ))}
       </div>
     </div>
