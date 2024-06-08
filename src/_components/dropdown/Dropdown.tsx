@@ -9,7 +9,7 @@ const questions = [
   { title: "Question 3", answer: "Answer 3" },
 ];
 
-export const Dropdown: React.FC = () => {
+export const Dropdown = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const onToggle = (index: number) => {
