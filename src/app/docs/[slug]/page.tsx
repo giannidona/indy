@@ -5,6 +5,27 @@ import fs from "fs";
 import path from "path";
 import { promisify } from "util";
 import { ShowCode } from "../_components/ShowCode";
+import { Metadata, ResolvingMetadata } from "next";
+
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.slug;
+
+  const component = COMPONENTS.find((component) => component.slug === slug);
+
+  return {
+    title: `Indy - ${component?.name}`,
+    description: component?.description,
+  };
+}
 
 async function readFilePath(filePath: string) {
   const readFile = promisify(fs.readFile);
