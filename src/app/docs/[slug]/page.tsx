@@ -43,36 +43,45 @@ export default async function ComponentDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const component = COMPONENTS.find(
-    (component) => component.slug === params.slug
-  );
+  try {
+    const component = COMPONENTS.find(
+      (component) => component.slug === params.slug
+    );
 
-  if (!component) {
-    notFound();
+    if (!component) {
+      notFound();
+    }
+
+    if (!component.type || !component.name) {
+      throw new Error("Component type or name is missing.");
+    }
+
+    const filePath = path.join(
+      process.cwd(),
+      "src",
+      "_components",
+      component.type,
+      `${component.name.replace(/\s+/g, "")}.tsx`
+    );
+
+    const code = await readFilePath(filePath);
+
+    return (
+      <section className="my-10 text-white w-full">
+        <h1 className="text-3xl font-bold mb-10">{component?.name}</h1>
+
+        <div className="mb-12 py-2 border border-eWhite/50 rounded-xl h-auto flex justify-center items-center">
+          {component?.component}
+        </div>
+
+        <ShowCode
+          code={code}
+          fileName={`${component.name.replace(/\s+/g, "")}.tsx`}
+        />
+      </section>
+    );
+  } catch (error) {
+    console.error("Error in ComponentDetailPage:", error);
+    return <p>An error occurred while loading the component details.</p>;
   }
-
-  const filePath = path.join(
-    process.cwd(),
-    "src",
-    "_components",
-    component.type,
-    `${component.name.replace(/\s+/g, "")}.tsx`
-  );
-
-  const code = await readFilePath(filePath);
-
-  return (
-    <section className="my-10 text-white w-full">
-      <h1 className="text-3xl font-bold mb-10">{component?.name}</h1>
-
-      <div className="mb-12 py-2 border border-eWhite/50 rounded-xl h-auto flex justify-center items-center">
-        {component?.component}
-      </div>
-
-      <ShowCode
-        code={code}
-        fileName={`${component.name.replace(/\s+/g, "")}.tsx`}
-      />
-    </section>
-  );
 }
