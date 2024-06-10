@@ -1,6 +1,5 @@
 import { COMPONENTS } from "@/data/components";
 import { notFound } from "next/navigation";
-
 import fs from "fs";
 import path from "path";
 import { promisify } from "util";
@@ -27,15 +26,16 @@ export async function generateMetadata(
   };
 }
 
-async function readFilePath(filePath: string) {
+async function readFilePath(filePath: string): Promise<string> {
   const readFile = promisify(fs.readFile);
 
-  const fileContent = await readFile(
-    path.join(process.cwd(), filePath),
-    "utf8"
-  );
-
-  return fileContent;
+  try {
+    const fileContent = await readFile(filePath, "utf8");
+    return fileContent;
+  } catch (error) {
+    console.error(`Error reading file at ${filePath}:`, error);
+    throw error;
+  }
 }
 
 export default async function ComponentDetailPage({
@@ -51,9 +51,13 @@ export default async function ComponentDetailPage({
     notFound();
   }
 
-  const filePath = `./src/_components/${
-    component.type
-  }/${component.name.replace(/\s+/g, "")}.tsx`;
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "_components",
+    component.type,
+    `${component.name.replace(/\s+/g, "")}.tsx`
+  );
 
   const code = await readFilePath(filePath);
 
