@@ -1,11 +1,12 @@
 import { COMPONENTS } from "@/data/components";
-import { notFound } from "next/navigation";
+import { ShowCode } from "../_components/ShowCode";
 
 import fs from "fs";
 import path from "path";
 import { promisify } from "util";
-import { ShowCode } from "../_components/ShowCode";
+
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
 
 interface Props {
   params: {
@@ -41,7 +42,7 @@ async function readFilePath(filePath: string) {
   const readFile = promisify(fs.readFile);
 
   const fileContent = await readFile(
-    path.join(process.cwd(), "public", filePath),
+    path.join(process.cwd(), filePath),
     "utf8"
   );
 
