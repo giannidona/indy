@@ -13,6 +13,16 @@ interface Props {
   };
 }
 
+export async function generateStaticParams() {
+  const component = COMPONENTS.map((component) => ({
+    slug: component.slug,
+  }));
+
+  return component;
+}
+
+export const dynamicParams = false;
+
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
