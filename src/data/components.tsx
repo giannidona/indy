@@ -14,7 +14,7 @@ export const COMPONENTS = [
     component: <IconBadge />,
     type: "badges",
     description:
-      "Un componente que muestra una insignia con un icono, útil para destacar información clave o notificaciones.",
+      "A component that displays a badge with an icon, useful for highlighting key information or notifications.",
   },
   {
     name: "Dropdown",
@@ -22,7 +22,7 @@ export const COMPONENTS = [
     component: <Dropdown />,
     type: "dropdown",
     description:
-      "Un menú desplegable interactivo que permite a los usuarios seleccionar una opción de una lista.",
+      "An interactive dropdown menu that allows users to select an option from a list.",
   },
   {
     name: "Pricing",
@@ -30,7 +30,7 @@ export const COMPONENTS = [
     component: <Pricing />,
     type: "pricing",
     description:
-      "Un componente para mostrar planes de precios y detalles de suscripción, ideal para páginas de productos y servicios.",
+      "A component for displaying pricing plans and subscription details, ideal for product and service pages.",
   },
   {
     name: "Stars",
@@ -38,7 +38,7 @@ export const COMPONENTS = [
     component: <Stars />,
     type: "users",
     description:
-      "Un componente de calificación con estrellas que permite a los usuarios evaluar productos o servicios.",
+      "A star rating component that allows users to rate products or services.",
   },
   {
     name: "Users List",
@@ -46,7 +46,7 @@ export const COMPONENTS = [
     component: <UsersList />,
     type: "users",
     description:
-      "Una lista de usuarios que muestra información básica, ideal para directorios y redes sociales.",
+      "A user list that displays basic information, ideal for directories and social networks.",
   },
   {
     name: "Gradient Word",
@@ -54,6 +54,6 @@ export const COMPONENTS = [
     component: <GradientWord />,
     type: "texts",
     description:
-      "Un componente de texto con un efecto de degradado, perfecto para destacar títulos o palabras clave.",
+      "A text component with a gradient effect, perfect for highlighting titles or keywords.",
   },
 ];
