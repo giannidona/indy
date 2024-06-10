@@ -31,7 +31,7 @@ async function readFilePath(filePath: string) {
   const readFile = promisify(fs.readFile);
 
   const fileContent = await readFile(
-    path.join(process.cwd(), filePath),
+    path.join(process.cwd(), "public", filePath),
     "utf8"
   );
 
